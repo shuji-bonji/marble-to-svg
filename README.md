@@ -26,11 +26,23 @@ npm install
 # 開発サーバーを起動
 npm run dev
 
-# ビルド
+# ビルド（ライブラリ）`dist/lib`
+npm run build:lib
+
+# ビルド（アプリ）`dist/app`
+npm run build:app
+
+# ビルド（アプリ＆ライブラリ）
 npm run build
 
-# テスト実行
+# テスト実行(一回のみ実行)
 npm run test
+
+# テスト実行
+npm run test:watch
+
+# ブレビュー
+npm run preview
 
 # GitHub Pagesにデプロイ
 npm run deploy

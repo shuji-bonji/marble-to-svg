@@ -9,12 +9,14 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "vite --config vite.app.config.ts",
+    "build:lib": "tsc && vite build --config vite.lib.config.ts",
+    "build:app": "tsc && vite build --config vite.app.config.ts",
+    "build": "npm run build:app && npm run build:lib",
+    "preview": "vite preview --config vite.app.config.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build:app && gh-pages -d dist"
   },
   "keywords": [
     "rxjs",
