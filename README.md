@@ -58,6 +58,8 @@ npm run deploy
 4. 「SVG生成」ボタンをクリックしてSVGを生成
 5. 「SVGをダウンロード」ボタンでSVGファイルをダウンロード
 
+<img width="600" alt="Marble to SVG Viewer" src="docs/view.png">
+
 ### プログラムでの使用
 
 ```ts
