@@ -98,10 +98,10 @@ export function renderSVG<T = any>(
  * @param fontSize フォントサイズ
  * @returns 推定幅
  */
-function getTextWidth(text: string, fontSize: number): number {
-  // 簡易的な計算：文字数 * フォントサイズの0.6倍
-  return text.length * fontSize * 0.6;
-}
+// function getTextWidth(text: string, fontSize: number): number {
+//   // 簡易的な計算：文字数 * フォントサイズの0.6倍
+//   return text.length * fontSize * 0.6;
+// }
 
 /**
  * XMLテキスト内の特殊文字をエスケープする
