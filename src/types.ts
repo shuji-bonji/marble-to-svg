@@ -1,11 +1,22 @@
 /**
- * 通知の種類
+ * 通知の種類（next / complete / error）
  */
-export type NotificationKind = 'N' | 'C' | 'E';
+export enum NotificationKind {
+  NEXT = 'N',
+  COMPLETE = 'C',
+  ERROR = 'E',
+}
 
 /**
+ * サブスクリプションの種類（subscribe / unsubscribe）
+ */
+export enum SubscriptionKind {
+  SUBSCRIBE = 'S',
+  UNSUBSCRIBE = 'U',
+}
+/**
  * 通知オブジェクト
- * 
+ *
  */
 export interface Notification<T = any> {
   kind: NotificationKind;
@@ -16,11 +27,6 @@ export interface Notification<T = any> {
 // - マーブル記法 a の値として数値 1 をマッピングする場合: value: 1
 // - マーブル記法 b の値としてオブジェクト { id: 1, name: 'test' } をマッピングする場合: value: { id: 1, name: 'test' }
 // - マーブル記法 c の値として配列 [1, 2, 3] をマッピングする場合: value: [1, 2, 3]
-
-/**
- * サブスクリプション通知の種類
- */
-export type SubscriptionKind = 'S' | 'U';
 
 /**
  * サブスクリプション通知オブジェクト
@@ -89,6 +95,14 @@ export interface RenderOptions {
   frameWidth: number;
 }
 
+export type DeepPartial<T> = {
+  [P in keyof T]?: T[P] extends object
+    ? T[P] extends Function
+      ? T[P]
+      : DeepPartial<T[P]>
+    : T[P];
+};
+
 /**
  * マーブルパース設定
  */
@@ -105,10 +119,10 @@ export interface ParseOptions<T = any> {
  * マーブルフレームの内部表現
  */
 export interface MarbleFrame {
-  index: number;  // フレームのインデックス
-  values: string[];  // このフレームで発生する値
-  complete: boolean;  // 完了フラグ
-  error: boolean;  // エラーフラグ
-  subscribe?: boolean;  // 購読開始フラグ（Hot Observable）
-  unsubscribe?: boolean;  // 購読解除フラグ
+  index: number; // フレームのインデックス
+  values: string[]; // このフレームで発生する値
+  complete: boolean; // 完了フラグ
+  error: boolean; // エラーフラグ
+  subscribe?: boolean; // 購読開始フラグ（Hot Observable）
+  unsubscribe?: boolean; // 購読解除フラグ
 }
