@@ -5,6 +5,8 @@
 
 これにより、Observableのタイムラインを視覚的に表現できます。
 
+[sample apl](https://shuji-bonji.github.io/marble-to-svg/)
+
 ## 主な機能
 
 1. マーブル記法の文字列を解析（parseMarble関数）
@@ -57,6 +59,8 @@ npm run deploy
 3. 必要に応じて値のマッピングをJSON形式で指定（例：`{ "a": "Hello", "b": "World" }`）
 4. 「SVG生成」ボタンをクリックしてSVGを生成
 5. 「SVGをダウンロード」ボタンでSVGファイルをダウンロード
+
+[ここ](https://shuji-bonji.github.io/marble-to-svg/)でも確認できます。
 
 <img width="600" alt="Marble to SVG Viewer" src="docs/view.png">
 
