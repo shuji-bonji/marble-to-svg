@@ -49,15 +49,17 @@ npm run deploy
 ### プログラムでの使用
 
 ```ts
-// ESモジュールとしてインポート
-import { parseMarble, renderSVG } from 'marble-svg-generator';
+// モジュールから関数をインポート
+import { parseMarble, renderSVG } from './src/main';
 
-// マーブル記法を解析
-const events = parseMarble('---a---b---|', {
-  values: { a: 'Hello', b: 'World' }
-});
+// マーブル記法と値マッピングを指定
+const marble = '---a---b---|';
+const values = { a: 'Hello', b: 'World' };
 
-// SVGを生成
+// マーブル文字列を解析してイベントを取得
+const events = parseMarble(marble, { values });
+
+// SVGとして描画
 const svg = renderSVG(events, {
   width: 800,
   height: 60,
@@ -67,8 +69,8 @@ const svg = renderSVG(events, {
   }
 });
 
-// SVGを要素に挿入
-document.getElementById('svg-container').innerHTML = svg;
+// SVGをHTMLに挿入（ブラウザ実行時）
+document.getElementById('svg-container')!.innerHTML = svg;
 ```
 
 ## 主要なAPI
