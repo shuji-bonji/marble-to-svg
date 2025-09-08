@@ -18,7 +18,7 @@
 ## ⚠️ 重要なお知らせ
 **GitHub公式リポジトリ以外のミラーサイトは利用しないでください。**  
 本プロジェクトの正規リポジトリは以下のURLのみです：
-- 正規リポジトリ: https://github.com/shuji-bonji/Situational-Awareness-and-Decision-Making
+- 正規リポジトリ: https://github.com/shuji-bonji/marble-to-svg
 
 偽サイトやミラーサイトにご注意ください。
 
